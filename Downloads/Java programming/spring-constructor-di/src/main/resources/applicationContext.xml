@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Non-Primitive Bean -->
+    <bean id="course" class="com.klu.Course">
+        <constructor-arg value="Spring Framework"/>
+        <constructor-arg value="6"/>
+    </bean>
+
+    <!-- Bean with ALL Data Types -->
+    <bean id="student" class="com.klu.Student">
+
+        <!-- Primitive + String -->
+        <constructor-arg value="101"/>
+        <constructor-arg value="Rama"/>
+        <constructor-arg value="25000"/>
+        <constructor-arg value="true"/>
+
+        <!-- Wrapper classes -->
+        <constructor-arg value="22"/>
+        <constructor-arg value="89.5"/>
+
+        <!-- Array -->
+        <constructor-arg>
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>Hibernate</value>
+            </list>
+        </constructor-arg>
+
+        <!-- List -->
+        <constructor-arg>
+            <list>
+                <value>Maths</value>
+                <value>Physics</value>
+                <value>Computer Science</value>
+            </list>
+        </constructor-arg>
+
+        <!-- Set -->
+        <constructor-arg>
+            <set>
+                <value>Reading</value>
+                <value>Coding</value>
+                <value>Music</value>
+            </set>
+        </constructor-arg>
+
+        <!-- Map -->
+        <constructor-arg>
+            <map>
+                <entry key="Sem1" value="85"/>
+                <entry key="Sem2" value="88"/>
+                <entry key="Sem3" value="90"/>
+            </map>
+        </constructor-arg>
+
+        <!-- Non-Primitive -->
+        <constructor-arg ref="course"/>
+
+    </bean>
+
+</beans>
